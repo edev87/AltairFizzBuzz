@@ -1,3 +1,4 @@
+//Getting the numebrs from the page, validate the niputs we collected, then pas the vales t the pther fucntions
 const getValues = () => {
   let fizzVal = document.getElementById('fizz-value').value;
   let buzzVal = document.getElementById('buzz-value').value;
@@ -33,17 +34,19 @@ const getValues = () => {
 
 }
 
+//create an array of values accordng to FizBuzz rules e.g. [1,2,'Fizz', 4, 'Buzz']
+
 const generateFizzBuzz = (convertFizzValToNum, convertBuzzValToNum, convertStopValToNum) => {
   let fizzBuzzNumbers = [];
- 
+
   for (let i = 1; i <= convertStopValToNum; i++) {
 
-    if (i % 3 === 0 && i % 5 === 0) {
+    if (i % convertFizzValToNum === 0 && i % convertBuzzValToNum === 0) {
       fizzBuzzNumbers.push("FizzBuzz")
-    } else if (i % 5 === 0) {
+    } else if (i % convertBuzzValToNum === 0) {
       fizzBuzzNumbers.push("Buzz")
     }
-    else if (i % 3 === 0) {
+    else if (i % convertFizzValToNum === 0) {
       fizzBuzzNumbers.push("Fizz")
     }
     else {
@@ -55,6 +58,7 @@ const generateFizzBuzz = (convertFizzValToNum, convertBuzzValToNum, convertStopV
 
 }
 
+//Takwe in an array of vlaues, and siaply them on the page
 const displayFizzBuzz = (passFizzBuzzCollection) => {
   let tableHtml = '';
 
@@ -73,10 +77,10 @@ const displayFizzBuzz = (passFizzBuzzCollection) => {
     else {
       className = ""
     }
+    let htmlCol = `<div class="col ${className}">  ${currentNumber}</div>`
+    //let tableRowHtml = `<tr><td class="${className}"> ${currentNumber} </td></tr>`
 
-    let tableRowHtml = `<tr><td class="${className}"> ${currentNumber} </td></tr>`
-   
-    tableHtml += tableRowHtml;
+    tableHtml += htmlCol;
   }
 
   document.getElementById("results").innerHTML = tableHtml
