@@ -77,7 +77,7 @@ const displayFizzBuzz = (passFizzBuzzCollection) => {
     else {
       className = ""
     }
-    let htmlCol = `<div class="col ${className}">  ${currentNumber}</div>`
+    let htmlCol = `<div class="col ${className} border border-2">  ${currentNumber}</div>`
     //let tableRowHtml = `<tr><td class="${className}"> ${currentNumber} </td></tr>`
 
     tableHtml += htmlCol;
