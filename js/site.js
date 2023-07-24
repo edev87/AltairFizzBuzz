@@ -8,6 +8,7 @@ const getValues = () => {
   let convertBuzzValToNum = Number(buzzVal);
   let convertStopValToNum = Number(stopVal);
 
+  //if
   if (convertFizzValToNum != 3 || convertBuzzValToNum != 5 ||
     isNaN(convertFizzValToNum) || isNaN(convertBuzzValToNum)) {
 
@@ -26,6 +27,16 @@ const getValues = () => {
       backdrop: false
     });
   }
+  else if (convertFizzValToNum < 1) {
+    Swal.fire({
+      title: 'Oops!',
+      text: 'The fizz value cannot be less than 1',
+      icon: 'error',
+      backdrop: false
+    });
+  }
+
+
 
   let passFizzBuzzCollection = generateFizzBuzz(convertFizzValToNum, convertBuzzValToNum, convertStopValToNum);
 
@@ -65,6 +76,8 @@ const displayFizzBuzz = (passFizzBuzzCollection) => {
   for (let i = 0; i < passFizzBuzzCollection.length; i++) {
     let currentNumber = passFizzBuzzCollection[i];
     let className = '';
+    //could also make classes for fizzbuzz uppercase and apply directly from the array 
+    //since the array holds fizz buzz
     if (currentNumber === "Fizz") {
       className = "fizz text-light";
     }
