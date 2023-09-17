@@ -1,4 +1,4 @@
-//Getting the numebrs from the page, validate the niputs we collected, then pas the vales t the pther fucntions
+//Getting the numbers from the page, validate the niputs we collected, then pas the vales t the pther fucntions
 const getValues = () => {
   let fizzVal = document.getElementById('fizz-value').value;
   let buzzVal = document.getElementById('buzz-value').value;
