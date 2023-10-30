@@ -45,7 +45,7 @@ const getValues = () => {
 
 }
 
-//create an array of values accordng to FizBuzz rules e.g. [1,2,'Fizz', 4, 'Buzz']
+//create an array of values accordng to FizzBuzz rules e.g. [1,2,'Fizz', 4, 'Buzz']
 
 const generateFizzBuzz = (convertFizzValToNum, convertBuzzValToNum, convertStopValToNum) => {
   let fizzBuzzNumbers = [];
@@ -69,7 +69,7 @@ const generateFizzBuzz = (convertFizzValToNum, convertBuzzValToNum, convertStopV
 
 }
 
-//Takwe in an array of vlaues, and siaply them on the page
+//Take in an array of vlaues, and siaply them on the page
 const displayFizzBuzz = (passFizzBuzzCollection) => {
   let tableHtml = '';
 
